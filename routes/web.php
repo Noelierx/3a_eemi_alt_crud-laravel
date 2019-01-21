@@ -12,11 +12,11 @@
 */
 
 Route::get('/afficher-formulaire', function () {
-  return view('formulaire');
+    return view('formulaire');
 });
 
 Route::post('/envoyer-formulaire', 'FormulaireController@enregistrerFormulaire')
-     ->name('post-formulaire');
+    ->name('post-formulaire');
 
 Route::get('/afficher-formulaire-film', 'MovieController@afficherFormulaire')->name('afficher-formulaire-film');
 Route::post('enregistrer-film', 'MovieController@enregistrerFilm')->name('enregistrer-film');
@@ -24,4 +24,5 @@ Route::get('/modifier-film/{id}', 'MovieController@afficherFormulaireModificatio
 Route::post('/modifier-film/{id}', 'MovieController@enregistrerModificationFilm')->name('modifier-film');
 
 Route::resource('article', 'ArticleController');
+Route::post('/article/form_create', 'ArticleController@enregistrerAilm')->name('enregistrer-article');
 Route::resource('commentaires', 'CommentaireController');
